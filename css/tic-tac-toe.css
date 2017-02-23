@@ -10,13 +10,17 @@
     align-items: center;
 }
 
-.app {
+#app {
 /*    background-color: #fff;*/
     min-width: 400px;
     min-height: 400px;
     display: flex;
 }
-
+.big-btn-container {
+    min-width: 400px;
+    min-height: 400px;
+    display: flex;
+}
 .big-btn {
     background-color: #424242;
     width: 50%;

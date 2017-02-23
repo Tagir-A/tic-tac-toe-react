@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #424242;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+/*    background-color: #fff;*/
+    min-width: 400px;
+    min-height: 400px;
+    display: flex;
+}
+
+.big-btn {
+    background-color: #424242;
+    width: 50%;
+    color: #66bb6a;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: 1px solid #999999;
+}
+
+.big-btn:first-child {
+    border-right: none;
+}
+
+.big-btn:hover {
+    background-color: #494a4f;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.board {
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell {
+    width: 33.3%;
+    height: 33.3%;
+    background-color: #424242;
+    border: none;
+    color: #66bb6a;
+    font-size: 5rem;
+}
+.cell:nth-child(n+1):nth-child(-n+2) {
+    border-right: 1px solid #999999;
+}
+.cell:nth-child(n+4):nth-child(-n+5) {
+    border-right: 1px solid #999999;
+}
+.cell:nth-child(n+4):nth-child(-n+6) {
+    border-top: 1px solid #999999;
+}
+.cell:nth-child(n+7):nth-child(-n+8) {
+    border-right: 1px solid #999999;
+}
+.cell:nth-child(n+7):nth-child(-n+9) {
+    border-top: 1px solid #999999;
+}
+

@@ -1,3 +1,3 @@
 
-console.log("Sodsd")
-console.log("socks")
+console.log("Ssd")
+console.log("s")

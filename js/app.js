@@ -1,1 +1,3 @@
-alert("ASSHOLE")
+
+console.log("Sodsd")
+console.log("socks")

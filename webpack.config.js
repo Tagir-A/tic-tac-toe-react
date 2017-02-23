@@ -1,7 +1,7 @@
 const webpack = require('webpack');
-
+var path = require('path');
 module.exports = {
-  context: __dirname,
+  context: path.resolve(__dirname),
   devtool: "cheap-module-source-map",
   entry: "./js/app.js",
   module: {
@@ -14,7 +14,7 @@ module.exports = {
     }]
   },
   output: {
-    path: __dirname + "/js/",
+    path: path.resolve(__dirname),
     filename: "client.min.js"
   },
 }

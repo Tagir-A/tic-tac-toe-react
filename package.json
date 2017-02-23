@@ -1,0 +1,17 @@
+{
+  "name": "react-tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Tagir's tic-tac-toe game",
+  "main": "/js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "webpack-dev-server --inline --hot"
+  },
+  "keywords": [],
+  "author": "Almasov Tagir",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}

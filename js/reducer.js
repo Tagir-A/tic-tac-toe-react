@@ -1,4 +1,4 @@
-// import { reset, addSymbol } from "./actions"
+import { reset, addSymbol } from "./actions"
 import { chkWin, chkWinline } from "./logic"
 
 const initState = {

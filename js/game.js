@@ -27,7 +27,7 @@ function mapDispatchToProps(dispatch) {
 export default class Game extends React.Component {
     render() {
         console.log(this.props)
-        if (this.props.turn == 9) {
+        if (this.props.turn == 9 && this.props.winline[0] === false) {
             return (
                 <Popup onClick={this.props.resetClick} />
             )

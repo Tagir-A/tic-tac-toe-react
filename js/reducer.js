@@ -15,7 +15,7 @@ export default function gameReducer(state = initState, action) {
             return initState
         case "ADD_SYMBOL":
             let newState = Object.assign({}, state, {board: state.board.slice()})
-            if (newState.board[action.index]) {
+            if (newState.board[action.index] || newState.winline[0] !== false) {
                 return state
             }
             newState.board[action.index] = state.next

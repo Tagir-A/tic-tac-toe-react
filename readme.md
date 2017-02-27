@@ -17,5 +17,5 @@ Currently under development.
 7. Implement modular indepent styling via JSS
 
 ### Credits
-Author: me :D
-Design from: [Jami Gibbs](https://dribbble.com/shots/2653403-Tic-Tac-Toe)
+*Author: me :D
+*Design from: [Jami Gibbs](https://dribbble.com/shots/2653403-Tic-Tac-Toe)

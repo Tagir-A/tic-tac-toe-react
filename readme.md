@@ -15,3 +15,7 @@ Currently under development.
 5. Add AI
 6. Restyle reset buttons
 7. Implement modular indepent styling via JSS
+
+### Credits
+Author: me :D
+Design from: [Jami Gibbs](https://dribbble.com/shots/2653403-Tic-Tac-Toe)

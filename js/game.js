@@ -34,13 +34,16 @@ function mapDispatchToProps(dispatch) {
 export default class Game extends React.Component {
     render() {
         // console.log(this.props)
-        if (false) {
+        if (this.props.mainMenu) {
             return <div class="layout">
                     <Info
                         text="tic-tac-toe" 
                         onClick={this.props.resetClick}
                     />
-                    <Menu />
+                    <Menu
+                        txt1="Single"
+                        txt2="Multiplayer"
+                    />
                 </div>
             
         } else {

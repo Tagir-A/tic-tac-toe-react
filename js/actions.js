@@ -10,6 +10,12 @@ export function chooseMode (value) {
         value: value,
     }
 }
+export function timeTravel (index) {
+    return {
+        type: "TIME_TRAVEL",
+        index: index,
+    }
+}
 export const reset = {
     type: "RESET",
 }

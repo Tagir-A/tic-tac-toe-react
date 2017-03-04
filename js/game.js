@@ -1,5 +1,5 @@
 import React from "react"
-import { addSymbol, reset, chooseMode } from "./actions"
+import { addSymbol, reset, chooseMode, timeTravel } from "./actions"
 // Components
 import Board from "./board"
 import Popup from "./popup"
@@ -18,6 +18,7 @@ function mapStateToProps(store) {
         mainMenu: store.mainMenu,
         singlePlayer: store.singlePlayer,
         sideMenu: store.sideMenu,
+        turns: store.turns,
     }
 }
 function mapDispatchToProps(dispatch) {
@@ -32,6 +33,10 @@ function mapDispatchToProps(dispatch) {
         buttonClick: (proxy) => {
             const target = proxy.target
             dispatch(chooseMode(target.innerHTML))
+        },
+        turnClick: (proxy) => {
+            const target = proxy.target
+            dispatch(timeTravel(target.innerHTML))
         }
     }
 }
@@ -47,24 +52,21 @@ export default class Game extends React.Component {
                 txt2 = "O"
             }
             return <div class="layout">
-                    <Info
-                        text="tic-tac-toe" 
-                        onClick={this.props.resetClick}
-                    />
-                    <Menu
-                        txt1={txt1}
-                        txt2={txt2}
-                        onClick={this.props.buttonClick}
-                    />
-                </div>
-            
-        /*} else if(this.props.sideMenu) {
-            return <div class="layout">
-
-                    </div>*/
+                        <Info
+                            text="tic-tac-toe" 
+                            onClick={this.props.resetClick}
+                        />
+                        <Menu
+                            txt1={txt1}
+                            txt2={txt2}
+                            onClick={this.props.buttonClick}
+                        />
+                    </div>
         } else {
             return <div class="layout">
                     <InGameInfo 
+                        turns={this.props.turns}
+                        turnClick={this.props.turnClick}
                         onClick={this.props.resetClick}
                     />
                     <Board
@@ -74,18 +76,5 @@ export default class Game extends React.Component {
                     />
                 </div>
         }
-        /*console.log(this.props)
-        if (this.props.turn == 9 && this.props.winline[0] === false) {
-            return (
-                <Popup onClick={this.props.resetClick} />
-            )
-        } else
-            return (<Board board={this.props.board}
-                    winline={this.props.winline}
-                cellClick={this.props.cellClick}
-                    />
-            )*/
-
-
     }
 }

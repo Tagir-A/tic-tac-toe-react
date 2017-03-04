@@ -4,12 +4,13 @@ import { chkWinLine } from "./logic"
 const initState = {
     board: Array(9).fill(null),
     next: "X",
-    winline: [false,false,false],
+    winline: Array(3).fill(false),
     turn: 0,
     mainMenu: true,
     singlePlayer: false, // true = single, false = multi
     sideMenu: false, // menu to choose side
     playerFirst: true, // AI or Player goes first in single
+    turns: Array(1).fill(null)
 }
 
 export default function gameReducer(state = initState, action) {
@@ -18,8 +19,13 @@ export default function gameReducer(state = initState, action) {
         case "RESET":
             return initState
         case "ADD_SYMBOL":
-            //newState = Object.assign({}, state, {board: state.board.slice()})
-            newState = JSON.parse(JSON.stringify(state)) // deep object clone
+            //object clone with deep array cloning
+            newState = Object.assign({}, state, {board: state.board.slice(),
+                                                winline: state.winline.slice(),
+                                                turns: state.turns.slice(),
+                                                }) 
+            // newState = JSON.parse(JSON.stringify(state)) // deep object clone
+            //check for empty cell
             if (newState.board[action.index] || newState.winline[0] !== false) {
                 return state
             }
@@ -29,6 +35,8 @@ export default function gameReducer(state = initState, action) {
             if (newState.turn > 4) {
                 newState.winline = chkWinLine(newState.board)
             }
+            newState.turns.push(newState)
+            console.log(newState)
             return newState
         case "CHOOSE_MODE":
             newState = JSON.parse(JSON.stringify(state))
@@ -53,6 +61,8 @@ export default function gameReducer(state = initState, action) {
                     return state
             }
             return newState
+        case "TIME_TRAVEL":
+            return state.turns[action.index]
         default:
             return state
     }

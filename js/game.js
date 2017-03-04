@@ -45,20 +45,23 @@ export default class Game extends React.Component {
     render() {
         // console.log(this.props)
         if (this.props.mainMenu || this.props.sideMenu) {
-            let txt1 = "Single"
-            let txt2 = "Multiplayer"
+            let txt = "tic-tac-toe"
+            let txtBtn1 = "Single"
+            let txtBtn2 = "Multiplayer"
             if (this.props.sideMenu) {
-                txt1 = "X"
-                txt2 = "O"
+                txt = "First move is always X"
+                txtBtn1 = "X"
+                txtBtn2 = "O"
+
             }
             return <div class="layout">
                         <Info
-                            text="tic-tac-toe" 
+                            text={txt} 
                             onClick={this.props.resetClick}
                         />
                         <Menu
-                            txt1={txt1}
-                            txt2={txt2}
+                            txtBtn1={txtBtn1}
+                            txtBtn2={txtBtn2}
                             onClick={this.props.buttonClick}
                         />
                     </div>

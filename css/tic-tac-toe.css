@@ -10,13 +10,26 @@
     align-items: center;
 }
 
-#app {
-/*    background-color: #fff;*/
+/*#app {
+    background-color: #fff;
     min-width: 400px;
     min-height: 400px;
-    max-height: 400px;
+    max-height: 500px;
     max-width: 400px;
     display: flex;
+}*/
+.layout {
+    /*background-color: #fff;*/
+    min-width: 400px;
+    min-height: 400px;
+    max-height: 500px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+.info {
+    height: 100px;
+    flex-basis: 100px;
 }
 .big-btn-container {
     min-width: 400px;

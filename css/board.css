@@ -1,12 +1,12 @@
 .board {
-    min-width: 100%;
-    min-height: 100%;
+    width: 400px;
+    height: 400px;
     display: flex;
     flex-wrap: wrap;
 }
 .cell {
-    width: 33.3%;
-    height: 33.3%;
+    min-width: 33.3%;
+    min-height: 33.3%;
     background-color: #424242;
     border: none;
     color: #66bb6a;

@@ -9,5 +9,5 @@ let store = createStore(gameReducer)
 const app = document.getElementById("app")
 
 ReactDOM.render(<Provider store={store}>
-    <Game />
-</Provider>, app)
+                    <Game />
+                </Provider>, app)

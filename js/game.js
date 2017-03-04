@@ -1,10 +1,11 @@
 import React from "react"
-import { addSymbol, reset } from "./actions"
+import { addSymbol, reset, chooseMode } from "./actions"
 // Components
 import Board from "./board"
 import Popup from "./popup"
 import Info from "./info"
 import Menu from "./menu"
+import InGameInfo from "./in-game-info"
 // end of components
 import { connect } from "react-redux"
 
@@ -27,6 +28,10 @@ function mapDispatchToProps(dispatch) {
         },
         resetClick: () => {
             dispatch(reset)
+        },
+        buttonClick: (proxy) => {
+            const target = proxy.target
+            dispatch(chooseMode(target.innerHTML))
         }
     }
 }
@@ -43,12 +48,13 @@ export default class Game extends React.Component {
                     <Menu
                         txt1="Single"
                         txt2="Multiplayer"
+                        onClick={this.props.buttonClick}
                     />
                 </div>
             
         } else {
             return <div class="layout">
-                    <Info 
+                    <InGameInfo 
                         onClick={this.props.resetClick}
                     />
                     <Board

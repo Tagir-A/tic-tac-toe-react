@@ -31,6 +31,23 @@ export default function gameReducer(state = initState, action) {
             return newState
         case "CHOOSE_MODE":
             newState = JSON.parse(JSON.stringify(state))
+            newState.mainMenu = false
+            switch (action.value) {
+                case "Single":
+                    newState.singlePlayer = true
+                    return newState
+                case "Multiplayer":
+                    newState.singlePlayer = false
+                    return newState
+                case "X":
+                    newState.next = "X"
+                    return newState
+                case "O":
+                    newState.next = "O"
+                    return newState
+                default:
+                    return state
+            }
             return newState
         default:
             return state

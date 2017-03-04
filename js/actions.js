@@ -4,10 +4,10 @@ export function addSymbol (index) {
         index: index,
     }
 }
-export function chooseMode (index) {
+export function chooseMode (value) {
     return {
         type: "CHOOSE_MODE",
-        index: index,
+        value: value,
     }
 }
 export const reset = {

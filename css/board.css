@@ -12,6 +12,9 @@
     color: #66bb6a;
     font-size: 5rem;
 }
+.cell:focus {
+    outline: 0;
+}
 .cell:nth-child(n+1):nth-child(-n+2) {
     border-right: 1px solid #999999;
 }

@@ -8,7 +8,8 @@ const initState = {
     turn: 0,
     mainMenu: true,
     singlePlayer: false, // true = single, false = multi
-    sideMenu: false // menu to choose side
+    sideMenu: false, // menu to choose side
+    playerFirst: true, // AI or Player goes first in single
 }
 
 export default function gameReducer(state = initState, action) {
@@ -35,15 +36,18 @@ export default function gameReducer(state = initState, action) {
             switch (action.value) {
                 case "Single":
                     newState.singlePlayer = true
+                    newState.sideMenu = true
                     return newState
                 case "Multiplayer":
                     newState.singlePlayer = false
                     return newState
                 case "X":
-                    newState.next = "X"
+                    newState.playerFirst = true //unnecessary, but for the sake of consistency
+                    newState.sideMenu = false
                     return newState
                 case "O":
-                    newState.next = "O"
+                    newState.playerFirst = false
+                    newState.sideMenu = false
                     return newState
                 default:
                     return state

@@ -39,19 +39,29 @@ function mapDispatchToProps(dispatch) {
 export default class Game extends React.Component {
     render() {
         // console.log(this.props)
-        if (this.props.mainMenu) {
+        if (this.props.mainMenu || this.props.sideMenu) {
+            let txt1 = "Single"
+            let txt2 = "Multiplayer"
+            if (this.props.sideMenu) {
+                txt1 = "X"
+                txt2 = "O"
+            }
             return <div class="layout">
                     <Info
                         text="tic-tac-toe" 
                         onClick={this.props.resetClick}
                     />
                     <Menu
-                        txt1="Single"
-                        txt2="Multiplayer"
+                        txt1={txt1}
+                        txt2={txt2}
                         onClick={this.props.buttonClick}
                     />
                 </div>
             
+        /*} else if(this.props.sideMenu) {
+            return <div class="layout">
+
+                    </div>*/
         } else {
             return <div class="layout">
                     <InGameInfo 

@@ -26,7 +26,8 @@ export default function gameReducer(state = initState, action) {
                                                 }) 
             // newState = JSON.parse(JSON.stringify(state)) // deep object clone
             //check for empty cell
-            if (newState.board[action.index] || newState.winline[0] !== false) {
+            if (newState.board[action.index] || newState.winline[0] !== false
+            || (newState.singlePlayer && ( (newState.playerFirst && newState.next == "O") || (!newState.playerFirst && newState.next == "X") ))) {
                 return state
             }
             newState.board[action.index] = state.next

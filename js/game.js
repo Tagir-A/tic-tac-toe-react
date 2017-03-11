@@ -43,7 +43,6 @@ function mapDispatchToProps(dispatch) {
 @connect(mapStateToProps, mapDispatchToProps)
 export default class Game extends React.Component {
     render() {
-        // console.log(this.props)
         if (this.props.mainMenu || this.props.sideMenu) {
             let txt = "tic-tac-toe"
             let txtBtn1 = "Single"

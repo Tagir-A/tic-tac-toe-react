@@ -36,7 +36,6 @@ export default function gameReducer(state = initState, action) {
                 newState.winline = chkWinLine(newState.board)
             }
             newState.turns.push(newState)
-            console.log(newState)
             return newState
         case "CHOOSE_MODE":
             newState = JSON.parse(JSON.stringify(state))

@@ -49,10 +49,7 @@ function mapDispatchToProps(dispatch) {
 export default class Game extends React.Component {
     componentDidUpdate() {
         if (this.props.singlePlayer && !this.props.mainMenu && !this.props.sideMenu) {
-            console.log("so far so good")
             if ( (this.props.playerFirst && this.props.next == "O") || (!this.props.playerFirst && this.props.next == "X")) {
-                console.log(this.props)
-                console.log("should've moved")
             this.props.aiMove(this.props.board)
             }
         }

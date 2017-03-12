@@ -33,7 +33,6 @@ export default function gameReducer(state = initState, action) {
                                                 winline: state.winline.slice(),
                                                 turns: state.turns.slice(),
                                                 }) 
-            // newState = JSON.parse(JSON.stringify(state)) // deep object clone
             //check for empty cell
             if (newState.board[action.index] || newState.winline[0] !== false
             || (newState.singlePlayer && ( (newState.playerFirst && newState.next == "O") || (!newState.playerFirst && newState.next == "X") ))) {

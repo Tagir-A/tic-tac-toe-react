@@ -19,8 +19,10 @@ export function chkWinLine (arr) {
 }
 
 export function aiMove (board) {
+  let move
   do {
-    let move = getRandomInt(0,9)
+    move = getRandomInt(0,9)
+    console.log(`rand number ${move}`)
   } while (board[move] !== null)
   return move
 }

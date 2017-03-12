@@ -12,7 +12,16 @@ const initState = {
     playerFirst: true, // AI or Player goes first in single
     turns: Array(1).fill(null)
 }
-
+function calculateMove (newState, action, state) {
+            newState.board[action.index] = state.next
+            newState.next = state.next == "X" ? "O" : "X"
+            newState.turn++
+            if (newState.turn > 4) {
+                newState.winline = chkWinLine(newState.board)
+            }
+            newState.turns.push(newState)
+            return newState
+}
 export default function gameReducer(state = initState, action) {
     let newState
     switch (action.type) {
@@ -30,16 +39,26 @@ export default function gameReducer(state = initState, action) {
             || (newState.singlePlayer && ( (newState.playerFirst && newState.next == "O") || (!newState.playerFirst && newState.next == "X") ))) {
                 return state
             }
-            newState.board[action.index] = state.next
-            newState.next = state.next == "X" ? "O" : "X"
-            newState.turn++
-            if (newState.turn > 4) {
-                newState.winline = chkWinLine(newState.board)
-            }
-            newState.turns.push(newState)
-            return newState
+            // newState.board[action.index] = state.next
+            // newState.next = state.next == "X" ? "O" : "X"
+            // newState.turn++
+            // if (newState.turn > 4) {
+            //     newState.winline = chkWinLine(newState.board)
+            // }
+            // newState.turns.push(newState)
+            return calculateMove(newState, action, state)
+        case "ADD_SYMBOL_AI":
+            newState = Object.assign({}, state, {board: state.board.slice(),
+                                                winline: state.winline.slice(),
+                                                turns: state.turns.slice(),
+                                            })
+           if (newState.board[action.index] || newState.winline[0] !== false) return state
+           return calculateMove(newState, action, state)
         case "CHOOSE_MODE":
-            newState = JSON.parse(JSON.stringify(state))
+            newState = Object.assign({}, state, {board: state.board.slice(),
+                                                winline: state.winline.slice(),
+                                                turns: state.turns.slice(),
+                                                })
             newState.mainMenu = false
             switch (action.value) {
                 case "Single":

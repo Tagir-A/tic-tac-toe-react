@@ -16,6 +16,12 @@ export function timeTravel (index) {
         index: index,
     }
 }
+export function addSymbolAI (index) {
+    return {
+        type: "ADD_SYMBOL_AI",
+        index: index,
+    }
+}
 export const reset = {
     type: "RESET",
 }

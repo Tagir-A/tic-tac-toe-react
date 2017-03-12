@@ -6,15 +6,17 @@ Currently under development.
 1. Can play tic-tac-toe
 2. Determine winner
 3. Reset after tie
+4. Reset after victory
+5. History of turns
+6. Single and Multi
+7. Can choose side
 
 ## TODO
-1. Add reset after victory
-2. Add turn-based system of symbols
-3. Add history
-4. Add single and multiplayer
-5. Add AI
-6. Restyle reset buttons
-7. Implement modular indepent styling via JSS
+1. Add turn-based system of symbols
+2. Add AI
+3. Restyle reset buttons
+4. Implement modular independent styling via Modular CSS
+5. Optimize WebPack Config
 
 ### Credits
 * Author: me :D

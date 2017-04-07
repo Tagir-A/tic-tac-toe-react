@@ -1,16 +1,19 @@
 .css-board__board--enmg6 {
-    min-width: 100%;
-    min-height: 100%;
+    width: 400px;
+    height: 400px;
     display: flex;
     flex-wrap: wrap;
 }
 .css-board__cell--2mCce {
-    width: 33.3%;
-    height: 33.3%;
+    min-width: 33.3%;
+    min-height: 33.3%;
     background-color: #424242;
     border: none;
     color: #66bb6a;
     font-size: 5rem;
+}
+.css-board__cell--2mCce:focus {
+    outline: 0;
 }
 .css-board__cell--2mCce:nth-child(n+1):nth-child(-n+2) {
     border-right: 1px solid #999999;
@@ -30,5 +33,7 @@
 .css-board__winline--1RlUj {
     background-color: #f97406;
 }
-
+.css-board__yellow--3J5d8 {
+    color: yellow;
+}
 /*# sourceMappingURL=styles.css.map*/
